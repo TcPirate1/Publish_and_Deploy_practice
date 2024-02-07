@@ -1,16 +1,15 @@
 # Publishing and Deploying app
 
-[Self-Contained Publishing](https://learn.microsoft.com/en-us/dotnet/core/deploying/#publish-self-contained) & [dotnet publish documentation](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-publish).
+## Steps
 
-Basically run `dotnet publish --self-contained -r <RID> -c Release` where `<RID>` is the runtime identifier for the target platform. For example, `win-x64` for Windows 64-bit. The resulting output is a folder with the app and all its dependencies. The app can be run by executing the app's executable file.
+- Generate appropriate [Git tags](https://www.atlassian.com/git/tutorials/inspecting-a-repository/git-tag), [Git tag documentation](https://git-scm.com/docs/git-tag) for more information.
 
-[Docker image](https://learn.microsoft.com/en-us/dotnet/core/docker/introduction)
+- Create appropriate published app. Either self-contained or framework-dependent, using either Visual Studio or terminal. [Self-Contained Publishing](https://learn.microsoft.com/en-us/dotnet/core/deploying/#publish-self-contained) & [dotnet publish documentation](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-publish).
+  <br/>Basically run `dotnet publish --self-contained -r <RID> -c Release` where `<RID>` is the runtime identifier for the target platform. For example, `win-x64` for Windows 64-bit. The resulting output is a folder with the app and all its dependencies. The app can be run by executing the app's executable file.
 
-[How to make image with .NET SDK](https://learn.microsoft.com/en-us/dotnet/core/docker/publish-as-container?pivots=dotnet-8-0)
+- Create a [Docker image](https://learn.microsoft.com/en-us/dotnet/core/docker/introduction). <br/>[How to make image with .NET SDK](https://learn.microsoft.com/en-us/dotnet/core/docker/publish-as-container?pivots=dotnet-8-0)
 
-[How to create a Dockerfile](https://linuxize.com/post/how-to-build-docker-images-with-dockerfile/)
-
-[Git tag](https://www.atlassian.com/git/tutorials/inspecting-a-repository/git-tag) & [Git tag documentation](https://git-scm.com/docs/git-tag)
+- Make appropriate preparations for online services if needed. For this app, I will use [Azure Container Apps](https://azure.microsoft.com/en-us/products/container-apps/), which requires [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli). <br/> [How to publish to Azure Container Apps](https://learn.microsoft.com/en-us/azure/container-apps/get-started?tabs=azure-powershell)
 
 ## Important notes
 
